@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>buying card</title>
+</head>
+<body>
+    <style> 
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    padding: 0;
+    margin: 0;
+    color: black;
+    background-color:lightgreen;
+}
+
+.payment {
+  width: 500px;
+  height: 500px;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 10px 50px;
+  flex-direction: column;
+  -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+}
+
+.payTitle {
+  font-size: 20px;
+  color: lightgray;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.payInput {
+  padding: 10px;
+  margin: 10px 0px;
+  border: none;
+  border-bottom: 1px solid gray;
+}
+
+.payInput::placeholder {
+  color: rgb(163, 163, 163);
+}
+
+.cardIcons {
+  display: flex;
+}
+
+.cardIcon {
+  margin-right: 10px;
+}
+
+.cardInfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sm {
+  width: 30%;
+}
+
+.payButton {
+    position: absolute;
+    height: 36px;
+    bottom: 22px;
+    left: 42%;
+    -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+    background-color: #369e62;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.close {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  background-color: gray;
+  color: white;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 2px;
+}
+.back {
+    position: absolute;
+    height: 35px;
+    top: -1px;
+    bottom: -40;
+    right: 0px;
+    box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+    background-color: darkred;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 44px;
+}
+
+.apayButton{
+    color: ghostwhite;
+}
+    </style>
+    
+        <div class="payment">
+          <form action="{{url_for('checkout')}}" method="POST">
+            <h1 class="payTitle">Personal Information</h1>
+            <label>Name and Surname</label>
+            <input type="text" placeholder="Saria Abbar" class="payInput" required name="username"><br>
+            <label>Phone Number</label>
+            <input type="text" placeholder="+201100000000" class="payInput" required name="phone_number"><br>
+            <label>Address</label>
+            <input type="text" placeholder="cairo _ maadi " class="payInput" required name="address"><br>
+            <label>Confirm the Quantity</label>
+            <input type="text" placeholder="0" class="payInput" required name="quantity">
+            <h1 class="payTitle">Card Information</h1>
+            <div class="cardIcons">
+                <img src="/static/img/visa.png" width="40" alt="" class="cardIcon">
+                <img src="/static/img/master.png" alt="" width="40" class="cardIcon">
+            
+            <input type="password" class="payInput" placeholder="Card Number" required name="card_num">
+            </div>
+            <div class="cardInfo">
+                <input type="text" placeholder="mm" class="payInput sm" required name="month">
+                <input type="text" placeholder="yyyy" class="payInput sm" required name="year">
+                <input type="text" placeholder="cvv" class="payInput sm" required name="cvv">
+            </div>
+            <button class="payButton">Checkout!</button>
+            <br>
+            <a href="{{url_for('home')}}" class="apayButton"><button type="button" class="back">back!</button></a>
+          </form>
+        </div>
+    </div>
+</body>
+</html>
