@@ -279,23 +279,9 @@ label {
   color: gray;
 }
 
-.colors,
 .sizes {
   display: flex;
   margin-bottom: 20px;
-}
-
-.color {
-  width: 32px;
-  height: 32px;
-  border-radius: 5px;
-  background-color: black;
-  margin-right: 10px;
-  cursor: pointer;
-}
-
-.color:last-child {
-  background-color: darkblue;
 }
 
 .size {
@@ -363,6 +349,8 @@ label {
   padding: 15px;
   font-weight: 600;
   cursor: pointer;
+  border: revert;
+  border-color: black;
 }
 
 footer {
@@ -555,3 +543,16 @@ footer {
   background: #000;
   color: grey;
 }
+
+
+
+.galleryTitle {
+  text-align: center;
+}
+.galleryImg{
+border-radius: 15%;
+}
+.nsImg {
+border-radius: 50%;
+}
+

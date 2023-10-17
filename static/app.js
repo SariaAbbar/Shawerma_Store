@@ -92,6 +92,7 @@ menuItems.forEach((item, index) => {
   });
 });
 
+
 currentProductSizes.forEach((size, index) => {
   size.addEventListener("click", () => {
     currentProductSizes.forEach((size) => {
@@ -102,9 +103,6 @@ currentProductSizes.forEach((size, index) => {
     size.style.color = "white";
   });
 });
-
-
-
 
 
 // dark mode and save it inside local storage

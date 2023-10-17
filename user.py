@@ -1,5 +1,4 @@
 import json
-class Order:
     # def __init__(self, username, phone_number, address, quantity, card_num, month, year, cvv):
         # self.order_info = {
         #     "username": username,
@@ -11,6 +10,8 @@ class Order:
         #     "year": year,
         #     "cvv": cvv
         # }
+
+class Order:
     def __init__(self, form):
         self.order_info = form
     def save(self):
@@ -18,6 +19,8 @@ class Order:
         with open("test.json", "r") as file:
             user_list = json.loads(file.read())
 
+
+# append the data to the Json file 
         user_list.append(self.order_info)
         with open("test.json", "w") as file:
             json.dump(user_list, file, indent=4)
