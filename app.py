@@ -33,7 +33,8 @@ def checkout():
     order.save()
     return redirect(url_for("done"))
 
-
+# route for admin
+# he should add the correct username and password 
 @app.route("/admin", methods=["GET", "POST"])
 def admin():
     error = None
@@ -43,7 +44,7 @@ def admin():
         password = request.form["passwordadmin"]
 
         # Validate username and password
-        if username == "aaa" and password == "123":
+        if username == "sara" and password == "sara":
             session["logged_in"] = True
             return redirect(url_for("history"))
         else:
