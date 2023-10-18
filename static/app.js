@@ -10,19 +10,13 @@ const products = [
       {
         img: "/static/img/kilo_tavuk_doner_b2.png",
       },
-      {
-        img: "/static/img/kilo_tavuk_doner_b2.png",
-      },
     ],
   },
   {
-    id: 2,
+    id: 2, 
     title: "Meat shawerma",
     price: 120,
     colors: [
-      {
-        img: "/static/img/kilo_et_doner_b2.png",
-      },
       {
         img: "/static/img/kilo_et_doner_b2.png",
       },
@@ -36,9 +30,6 @@ const products = [
       {
         img: "/static/img/shawerma chicken.png",
       },
-      {
-        img: "/static/img/shawerma chicken.png",
-      },
     ],
   },
   {
@@ -49,9 +40,6 @@ const products = [
       {
         img: "/static/img/meat sand.png",
       },
-      {
-        img: "/static/img/meat sand.png",
-      },
     ],
   },
   {
@@ -59,9 +47,6 @@ const products = [
     title: "burger",
     price: 99,
     colors: [
-      {
-        img: "/static/img/burgerr.png",
-      },
       {
         img: "/static/img/burgerr.png",
       },
@@ -93,7 +78,7 @@ menuItems.forEach((item, index) => {
 });
 
 
-currentProductSizes.forEach((size, index) => {
+currentProductSizes.forEach((size) => {
   size.addEventListener("click", () => {
     currentProductSizes.forEach((size) => {
       size.style.backgroundColor = "white";
@@ -103,6 +88,12 @@ currentProductSizes.forEach((size, index) => {
     size.style.color = "white";
   });
 });
+
+
+
+
+
+
 
 
 // dark mode and save it inside local storage
