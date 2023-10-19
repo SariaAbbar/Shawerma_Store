@@ -29,7 +29,7 @@ def done():
 # function that take the data and save it then redirecting to the done page
 @app.route("/checkout", methods=["POST"])
 def checkout():
-    order = Order(dict(request.form))
+    order = Order(request.form)
     order.save()
     return redirect(url_for("done"))
 
@@ -38,13 +38,13 @@ def checkout():
 @app.route("/admin", methods=["GET", "POST"])
 def admin():
     error = None
-
+# there is just one user can see the history
     if request.method == "POST":
         username = request.form["usernameadmin"]
         password = request.form["passwordadmin"]
 
         # Validate username and password
-        if username == "sara" and password == "sara":
+        if username == "admin" and password == "1234":
             session["logged_in"] = True
             return redirect(url_for("history"))
         else:

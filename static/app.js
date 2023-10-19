@@ -1,6 +1,6 @@
 const wrapper = document.querySelector(".sliderWrapper");
 const menuItems = document.querySelectorAll(".menuItem");
-
+// put every type of food inside opject and give it an id and title and price and image
 const products = [
   {
     id: 1,
@@ -54,6 +54,9 @@ const products = [
   },
 ];
 
+
+
+
 let choosenProduct = products[0];
 
 const currentProductImg = document.querySelector(".productImg");
@@ -61,6 +64,7 @@ const currentProductTitle = document.querySelector(".productTitle");
 const currentProductPrice = document.querySelector(".productPrice");
 const currentProductColors = document.querySelectorAll(".color");
 const currentProductSizes = document.querySelectorAll(".size");
+// the switching from the type to the another
 
 menuItems.forEach((item, index) => {
   item.addEventListener("click", () => {
@@ -77,7 +81,7 @@ menuItems.forEach((item, index) => {
   });
 });
 
-
+// price button changing color on clicking
 currentProductSizes.forEach((size) => {
   size.addEventListener("click", () => {
     currentProductSizes.forEach((size) => {
