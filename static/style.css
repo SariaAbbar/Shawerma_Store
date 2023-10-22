@@ -49,6 +49,7 @@ nav {
   display: flex;
   width: 500vw;
   transition: all 1.5s ease-in-out;
+  height: 500px;
 }
 
 .sliderItem {
@@ -142,6 +143,24 @@ nav {
 .sliderItem:nth-child(5) .sliderPrice {
   color: cornsilk;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .features {
   display: flex;
@@ -248,6 +267,24 @@ label {
   padding: 2px;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .productImg {
   width: 50%;
   height: 100%;
@@ -306,6 +343,41 @@ label {
   background-color: white;
   color: black;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .gallery {
   padding: 50px;
@@ -411,6 +483,15 @@ footer {
   font-weight: 300;
   font-size: 14px;
 }
+
+
+
+
+
+
+
+/* responsive  */
+
 
 @media screen and (max-width: 480px) {
   nav {
@@ -523,6 +604,26 @@ footer {
     padding: 20px;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #toggle-btn {
   padding: 0.5em;
