@@ -1,70 +1,25 @@
 const wrapper = document.querySelector(".sliderWrapper");
 const menuItems = document.querySelectorAll(".menuItem");
-// put every type of food inside opject and give it an id and title and price and image
-const products = [
-  {
-    id: 1,
-    title: "Chicken shawerma",
-    price: 100,
-    colors: [
-      {
-        img: "/static/img/kilo_tavuk_doner_b2.png",
-      },
-    ],
-  },
-  {
-    id: 2, 
-    title: "Meat shawerma",
-    price: 120,
-    colors: [
-      {
-        img: "/static/img/kilo_et_doner_b2.png",
-      },
-    ],
-  },
-  {
-    id: 3,
-    title: "chicken shawerma sandwich",
-    price: 70,
-    colors: [
-      {
-        img: "/static/img/shawerma chicken.png",
-      },
-    ],
-  },
-  {
-    id: 4,
-    title: "meat shawerma sandwich",
-    price: 180,
-    colors: [
-      {
-        img: "/static/img/meat sand.png",
-      },
-    ],
-  },
-  {
-    id: 5,
-    title: "burger",
-    price: 99,
-    colors: [
-      {
-        img: "/static/img/burgerr.png",
-      },
-    ],
-  },
-];
 
 
 
+// product arrayyvit have an id and the title and the price and the img
+const products = [{id: 1,   title: "Chicken shawerma",         price: 100,           img: "/static/img/kilo_tavuk_doner_b2.png",},
+                  {id: 2,   title: "Meat shawerma",            price: 120,           img: "/static/img/kilo_et_doner_b2.png",},
+                  {id: 3,   title: "chicken shawerma sandwich",price: 70,            img: "/static/img/shawerma chicken.png",},
+                  {id: 4,   title: "meat shawerma sandwich",   price: 180,           img: "/static/img/meat sand.png",},
+                  {id: 5,   title: "burger",                   price: 99,            img: "/static/img/burgerr.png",},];
 
+// start from the fist product in the array
 let choosenProduct = products[0];
+
+
 
 const currentProductImg = document.querySelector(".productImg");
 const currentProductTitle = document.querySelector(".productTitle");
 const currentProductPrice = document.querySelector(".productPrice");
-const currentProductColors = document.querySelectorAll(".color");
 const currentProductSizes = document.querySelectorAll(".size");
-// the switching from the type to the another
+// switching from the one to the another
 
 menuItems.forEach((item, index) => {
   item.addEventListener("click", () => {
@@ -74,20 +29,23 @@ menuItems.forEach((item, index) => {
     //change the choosen product
     choosenProduct = products[index];
 
-    //change texts of currentProduct
+    //change the texts of currentProduct
     currentProductTitle.textContent = choosenProduct.title;
+    // change the price of currentPruduct
     currentProductPrice.textContent = "L.E" + choosenProduct.price;
-    currentProductImg.src = choosenProduct.colors[0].img;
+    // change the image of currentProduct
+    currentProductImg.src = choosenProduct.img;
   });
 });
 
-// price button changing color on clicking
+// looping on the them and reset the colors
 currentProductSizes.forEach((size) => {
   size.addEventListener("click", () => {
     currentProductSizes.forEach((size) => {
       size.style.backgroundColor = "white";
       size.style.color = "black";
     });
+    // change the color on clicking
     size.style.backgroundColor = "black";
     size.style.color = "white";
   });
