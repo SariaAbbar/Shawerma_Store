@@ -38,18 +38,18 @@ menuItems.forEach((item, index) => {
   });
 });
 
-// looping on the them and reset the colors
-currentProductSizes.forEach((size) => {
-  size.addEventListener("click", () => {
-    currentProductSizes.forEach((size) => {
-      size.style.backgroundColor = "white";
-      size.style.color = "black";
-    });
-    // change the color on clicking
-    size.style.backgroundColor = "black";
-    size.style.color = "white";
-  });
-});
+// // looping on the them and reset the colors
+// currentProductSizes.forEach((size) => {
+//   size.addEventListener("click", () => {
+//     currentProductSizes.forEach((size) => {
+//       size.style.backgroundColor = "white";
+//       size.style.color = "black";
+//     });
+//     // change the color on clicking
+//     size.style.backgroundColor = "black";
+//     size.style.color = "white";
+//   });
+// });
 
 
 
