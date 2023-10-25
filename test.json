@@ -1,1 +1,50 @@
-[]
+[
+    {
+        "username": "saria",
+        "phone_number": "0100000000000",
+        "address": "maadi",
+        "food": "Meat shawerma",
+        "quantity": "4",
+        "details": "i need it without pickles",
+        "card_num": "12121342434",
+        "month": "12",
+        "year": "2003",
+        "cvv": "123"
+    },
+    {
+        "username": "ahmed",
+        "phone_number": "011213121212",
+        "address": "giza",
+        "food": "chicken shawerma",
+        "quantity": "1",
+        "details": "i need it spicy",
+        "card_num": "2452523424",
+        "month": "1",
+        "year": "2000",
+        "cvv": "122"
+    },
+    {
+        "username": "khaled",
+        "phone_number": "0109237623",
+        "address": "dokki",
+        "food": "maet burger",
+        "quantity": "2",
+        "details": "i want 2 pepsi",
+        "card_num": "5645656565",
+        "month": "3",
+        "year": "2014",
+        "cvv": "666"
+    },
+    {
+        "username": "saria",
+        "phone_number": "0100000000000",
+        "address": "maadi",
+        "food": "chicken sandwich",
+        "quantity": "22",
+        "details": "i need it spicy",
+        "card_num": "2121",
+        "month": "12",
+        "year": "1221",
+        "cvv": "1212"
+    }
+]
