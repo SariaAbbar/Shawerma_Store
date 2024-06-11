@@ -38,24 +38,6 @@ menuItems.forEach((item, index) => {
   });
 });
 
-// // looping on the them and reset the colors
-// currentProductSizes.forEach((size) => {
-//   size.addEventListener("click", () => {
-//     currentProductSizes.forEach((size) => {
-//       size.style.backgroundColor = "white";
-//       size.style.color = "black";
-//     });
-//     // change the color on clicking
-//     size.style.backgroundColor = "black";
-//     size.style.color = "white";
-//   });
-// });
-
-
-
-
-
-
 
 
 // dark mode and save it inside local storage
@@ -73,7 +55,7 @@ const enableDarkMode = () => {
 const disableDarkMode = () => {
   theme.classList.remove("dark-mode-theme");
   toggleBtn.classList.add("dark-mode-toggle");
-  localStorage.setItem("dark-mode", "disabled");
+  localStorage.setItem("dark-mode", "disabled");``
 };
 
 if (darkMode === "enabled") {

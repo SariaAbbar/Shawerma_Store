@@ -3,174 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>buying card</title>
+    <title>Buying Card</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Lato", sans-serif;
+            padding: 0;
+            margin: 0;
+            color: black;
+            background-color: lightgreen;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .payment {
+            width: 500px;
+            padding: 20px;
+            margin-top: auto;
+            padding-top: 20px;
+            background-color: white;
+            box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+        }
+
+        .payTitle {
+            font-size: 24px;
+            color: #369e62;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .payInput, .food, textarea {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .payInput::placeholder {
+            color: rgb(163, 163, 163);
+        }
+
+        .cardIcons {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        .cardIcon {
+            margin: 0 10px;
+        }
+
+        .cardInfo {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .sm {
+            width: 30%;
+        }
+
+        .payButton {
+            display: block;
+            width: 100%;
+            height: 45px;
+            margin-top: 20px;
+            background-color: #369e62;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .back {
+            display: block;
+            width: 100%;
+            height: 45px;
+            margin-top: 10px;
+            background-color: darkred;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+            line-height: 45px;
+        }
+
+        .apayButton {
+            color: ghostwhite;
+        }
+
+        optgroup {
+            background-color: black;
+            color: white;
+        }
+
+        option {
+            background-color: whitesmoke;
+            color: black;
+        }
+    </style>
 </head>
 <body>
-    <style> 
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: "Lato", sans-serif;
-    padding: 0;
-    margin: 0;
-    color: black;
-    background-color:lightgreen;
-}
-
-.payment {
-  width: 500px;
-  height: 600px;
-  background-color: white;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  padding: 10px 50px;
-  flex-direction: column;
-  -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
-  box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
-  padding-bottom: 10px;
-}
-
-.payTitle {
-  font-size: 20px;
-  color: lightgray;
-}
-
-label {
-  font-size: 14px;
-  font-weight: 300;
-}
-
-.payInput {
-  padding: 10px;
-  margin: 10px 0px;
-  border: none;
-  border-bottom: 1px solid gray;
-}
-
-.payInput::placeholder {
-  color: rgb(163, 163, 163);
-}
-
-.cardIcons {
-  display: flex;
-}
-
-.cardIcon {
-  margin-right: 10px;
-}
-
-.cardInfo {
-  display: flex;
-  justify-content: space-between;
-}
-
-.sm {
-  width: 30%;
-}
-
-.payButton {
-    position: absolute;
-    height: 36px;
-    bottom: 7px;
-    left: 42%;
-    -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
-    box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
-    background-color: #369e62;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-.close {
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  background-color: gray;
-  color: white;
-  top: 10px;
-  right: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  padding: 2px;
-}
-.back {
-    position: absolute;
-    height: 35px;
-    top: -1px;
-    bottom: -40;
-    right: 0px;
-    box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.3);
-    background-color: darkred;
-    color: white;
-    border: none;
-    cursor: pointer;
-    width: 44px;
-}
-
-.apayButton{
-    color: ghostwhite;
-}
-
-optgroup {
-    background-color: black;
-    color: white;
-}
-option {
-    background-color: whitesmoke;
-    color: black;
-}
-
-    </style>
-    
-        <div class="payment">
-          <form action="{{url_for('checkout')}}" method="POST">
+    <div class="payment">
+        <form action="{{url_for('checkout')}}" method="POST">
             <h1 class="payTitle">Personal Information</h1>
-            <label>Name and Surname</label>
-            <input type="text" placeholder="Saria Abbar" class="payInput" required name="username"  pattern=".{4,}" ><br>
-            <label>Phone Number</label>
-            <input type="Number" placeholder="+201100000000" class="payInput" required name="phone_number" pattern=".{11,}"><br>
-            <label>Address</label>
-            <input type="text" placeholder="cairo _ maadi " class="payInput" required name="address" pattern=".{4,}"><br>
-            <label for="food" choose>choose your order</label>
-            <select class="food"  name="food" class="payInput" style="margin: 20px 0px;">
-              <optgroup label="shawerma" class="payInput">
-                <option value="chicken shawerma">chicken shawerma</option>
-                <option value="Meat shawerma">Meat shawerma</option>
-                <option value="chicken sandwich">chicken sandwich</option>
-                <option value="Meat sandwich">Meat sandwich</option>
-              </optgroup>
-              <optgroup label="burger">
-                <option value="maet burger">maet burger</option>
-              </optgroup>
+            <label for="username">Name and Surname</label>
+            <input type="text" id="username" placeholder="Saria Abbar" class="payInput" required name="username" pattern=".{4,}" title="Please enter at least 4 characters"><br>
+            <label for="phone_number">Phone Number</label>
+            <input type="tel" id="phone_number" placeholder="+201100000000" class="payInput" required name="phone_number" pattern="\+?\d{10,13}" title="Please enter a valid phone number"><br>
+            <label for="address">Address</label>
+            <input type="text" id="address" placeholder="Cairo, Maadi" class="payInput" required name="address" pattern=".{4,}" title="Please enter at least 4 characters"><br>
+            <label for="food">Choose your order</label>
+            <select id="food" name="food" class="payInput" required>
+                <optgroup label="Shawerma">
+                    <option value="chicken shawerma">Chicken Shawerma</option>
+                    <option value="meat shawerma">Meat Shawerma</option>
+                    <option value="chicken sandwich">Chicken Sandwich</option>
+                    <option value="meat sandwich">Meat Sandwich</option>
+                </optgroup>
+                <optgroup label="Burger">
+                    <option value="meat burger">Meat Burger</option>
+                </optgroup>
             </select><br>
-            <label>Confirm the Quantity</label>
-            <input type="Number" placeholder="0" class="payInput" required name="quantity" maxlength="1" pattern="\d{4,4}"><br>
-            <textarea name="details" cols="60" rows="1" placeholder="more information or add somethong else" style="margin: 20px 0px;"></textarea>
+            <label for="quantity">Confirm the Quantity</label>
+            <input type="number" id="quantity" placeholder="0" class="payInput" required name="quantity" min="1" max="10" title="Please enter a quantity between 1 and 10"><br>
+            <label for="details">Additional Information</label>
+            <textarea id="details" name="details" cols="60" rows="3" placeholder="More information or add something else" style="margin: 20px 0px;"></textarea>
             <h1 class="payTitle">Card Information</h1>
             <div class="cardIcons">
-                <img src="/static/img/visa.png" width="40" alt="" class="cardIcon">
-                <img src="/static/img/master.png" alt="" width="40" class="cardIcon">
-            
-            <input type="Number" class="payInput" placeholder="Card Number" required name="card_num" maxlength="17">
+                <img src="/static/img/visa.png" width="40" alt="Visa" class="cardIcon">
+                <img src="/static/img/master.png" alt="MasterCard" width="40" class="cardIcon">
             </div>
+            <label for="card_num">Card Number</label>
+            <input type="number" id="card_num" class="payInput" placeholder="Card Number" required name="card_num" pattern="\d{16}" title="Please enter a valid 16-digit card number"><br>
             <div class="cardInfo">
-                <input type="Number" placeholder="mm" class="payInput sm" required name="month" maxlength="4">
-                <input type="Number" placeholder="yyyy" class="payInput sm" required name="year"maxlength="4">
-                <input type="Number" placeholder="cvv" class="payInput sm" required name="cvv" maxlength="4">
+                <input type="number" placeholder="MM" class="payInput sm" required name="month" min="1" max="12" title="Please enter a valid month (1-12)">
+                <input type="number" placeholder="YYYY" class="payInput sm" required name="year" min="2023" max="2100" title="Please enter a valid year">
+                <input type="number" placeholder="CVV" class="payInput sm" required name="cvv" pattern="\d{3,4}" title="Please enter a valid 3 or 4-digit CVV">
             </div>
-            <button class="payButton">Checkout!</button>
-            <br>
-            <a href="{{url_for('home')}}" class="apayButton"><button type="button" class="back">back!</button></a>
-          </form>
-        </div>
+            <button type="submit" class="payButton">Checkout!</button>
+            <a href="{{url_for('home')}}" class="apayButton"><button type="button" class="back">Back!</button></a>
+        </form>
     </div>
 </body>
 </html>
